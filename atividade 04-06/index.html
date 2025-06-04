@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Previsão do Tempo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Garagem Inteligente & Previsão do Tempo</h1>
+    <div class="tabs">
+      <button id="tabGarage" class="active">Garagem</button>
+      <button id="tabWeather">Previsão do Tempo</button>
+    </div>
+    <div id="garageSection">
+      <p>Status da porta da garagem: <span id="status">Desconhecido</span></p>
+      <button id="abrirBtn">Abrir Porta</button>
+      <button id="fecharBtn">Fechar Porta</button>
+      <h3>Revisar o Carro</h3>
+      <p>Nível de combustível: <span id="fuelLevel">-</span></p>
+      <p>Última manutenção: <span id="lastMaintenance">-</span></p>
+      <p>Quilometragem: <span id="mileage">-</span></p>
+      <p>Status geral: <span id="carStatus">-</span></p>
+      <button id="refreshCarStatus">Atualizar Status</button>
+      <h3>Agendar Revisão</h3>
+      <form id="reviewForm">
+        <label for="reviewDate">Data da Revisão:</label><br />
+        <input type="date" id="reviewDate" name="reviewDate" required /><br />
+        <label for="reviewNotes">Observações:</label><br />
+        <textarea id="reviewNotes" name="reviewNotes" rows="3"></textarea><br />
+        <button type="submit">Agendar</button>
+      </form>
+      <div id="reviewMessage"></div>
+    </div>
+    <div id="weatherSection" style="display:none;">
+      <form id="weatherForm">
+        <label for="cidade">Digite o nome da cidade:</label><br />
+        <input type="text" id="cidade" name="cidade" required placeholder="Ex: Curitiba" /><br />
+        <button type="submit">Buscar Previsão</button>
+      </form>
+      <div id="resultado"></div>
+    </div>
+  </div>
+  <script src="client.js"></script>
+</body>
+</html>

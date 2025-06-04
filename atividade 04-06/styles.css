@@ -1,0 +1,174 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #6b73ff 0%, #000dff 100%);
+  color: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.5s ease;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  width: 100%;
+  max-width: 700px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  animation: fadeIn 1s ease forwards;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+  animation: glow 2s ease infinite alternate;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.tabs button {
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  padding: 12px 30px;
+  margin: 0 10px;
+  cursor: pointer;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.tabs button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+  z-index: 0;
+}
+
+.tabs button:hover::before {
+  width: 200%;
+  height: 500%;
+}
+
+.tabs button.active,
+.tabs button:hover {
+  background: #ffffff;
+  color: #000dff;
+  box-shadow: 0 0 30px #ffffff;
+  z-index: 1;
+}
+
+#garageSection, #weatherSection {
+  padding: 25px;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.35);
+  box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.15);
+  animation: fadeIn 1s ease forwards;
+}
+
+button {
+  background-color: #000dff;
+  color: #ffffff;
+  border: none;
+  padding: 14px 25px;
+  margin-top: 15px;
+  cursor: pointer;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 0 20px #000dff;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  background-color: #4a54ff;
+  box-shadow: 0 0 35px #4a54ff;
+}
+
+form label {
+  font-weight: 700;
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 8px;
+  color: #e0e0e0;
+  text-shadow: 0 0 3px rgba(0,0,0,0.5);
+}
+
+form input[type="text"],
+form input[type="date"],
+form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.3);
+  transition: background 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="date"]:focus,
+form textarea:focus {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+#resultado, #reviewMessage {
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  min-height: 28px;
+  color: #ffdd57;
+  text-align: center;
+  text-shadow: 0 0 8px #ffdd57;
+  animation: glow 2s ease infinite alternate;
+}
+
+/* Animations */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #ffdd57, 0 0 20px #ffdd57;
+  }
+  to {
+    text-shadow: 0 0 20px #ffdd57, 0 0 40px #ffdd57;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
